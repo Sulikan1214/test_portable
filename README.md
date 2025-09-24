@@ -1,21 +1,18 @@
-# Réussir son Entretien d'Embauche — Responsive
 
-Version mobile-first avec 20 slides.
+# Réussir son Entretien d'Embauche — Desktop identique, Mobile adapté
 
-## Lancer
-Ouvrez `index.html` dans un navigateur.
+Ce dossier garde **à l’identique le rendu Desktop** (PC) de votre atelier,
+et ajoute un fichier **`mobile.css`** chargé *uniquement* sur les petits écrans
+(`media="(max-width: 899.98px)"`).
 
-## Fonctionnalités
-- Layout responsive (mobile/tablette/desktop)
-- Navigation tactile (swipe), clavier, boutons
-- Bouton **Plein écran** (⛶)
+## Fichiers
+- `index.html` — Votre fichier d’origine **conservé** (avec l’ajout d’un bouton “Plein écran”).
+- `mobile.css` — Petites surcouches **uniquement mobile** (pile verticale, nav collante, etc.).
+- `images/` — Placez vos images (logo, etc.) ici.
 
-## Arborescence
-```
-responsive-entretien/
-├── index.html
-└── images/
-    └── 640px-Logo_Fédération_Nationale_des_CREPI_-_2_couleurs.jpg
-```
+## Déploiement GitHub Pages
+1. Poussez ces fichiers sur la branche `main` de votre dépôt.
+2. *Settings → Pages → Deploy from a branch* : choisissez `main` et `/ (root)`.
+3. Attendez le build, votre site sera en ligne.
 
-> Remplacez le logo par le vôtre si besoin.
+> **Note** : le bouton “⛶ Plein écran” ne modifie pas la mise en page ; il demande seulement au navigateur d’afficher la page en plein écran.

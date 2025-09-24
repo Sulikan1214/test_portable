@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Réussir son Entretien d'Embauche</title>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réussir son Entretien d'Embauche</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -398,767 +397,810 @@ body{
 }
 </style>
 
-<style>
-/* === Responsive overrides (mobile-first) === */
-:root{
-  --glass-bg: rgba(255,255,255,.12);
-  --glass-stroke: rgba(255,255,255,.18);
-  --glass-strong: rgba(255,255,255,.95);
-  --shadow-1: 0 8px 25px rgba(0,0,0,.15);
-  --shadow-2: 0 15px 35px rgba(0,0,0,.2);
-  --safe-b: env(safe-area-inset-bottom, 0px);
-}
-html,body{height:100%;}
-body{overflow:auto !important; background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
-.slide{min-height:100dvh; padding:24px clamp(16px,4vw,48px);}
-.slide.active{display:flex; flex-direction:column; justify-content:center; align-items:center; gap:24px}
-.title-slide{text-align:center}
-.slide-title{font-size:clamp(1.8rem,4.5vw,3.5rem);font-weight:800;line-height:1.1;color:#fff !important}
-.slide-subtitle{font-size:clamp(1.05rem,2.6vw,1.6rem);opacity:.92;color:#fff !important}
-.question-title{font-weight:800;text-align:center;text-shadow:0 4px 20px rgba(0,0,0,.3);font-size:clamp(1.2rem,3.8vw,2rem); color:#fff}
-.mindmap-container{position:relative; width:100%; max-width:1100px; min-height:500px; display:grid; place-items:center}
-.central-question{background:rgba(255,255,255,.15); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.2); color:#fff; border-radius:24px; width:min(90%,420px); padding:18px 24px; text-align:center; font-weight:800; line-height:1.3; box-shadow:var(--shadow-2); z-index:2}
-.bubble{background:var(--glass-bg); backdrop-filter:blur(15px); border:1px solid var(--glass-stroke); border-radius:22px; padding:18px 20px; box-shadow:var(--shadow-1); color:#fff; min-width:min(280px,100%); max-width:420px; transition:transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s; cursor:pointer}
-.bubble-header{font-weight:800;text-align:center;margin-bottom:8px;color:#fff}
-.bubble-content{display:none;color:rgba(255,255,255,.96);line-height:1.55;font-size:1rem}
-.bubble.expanded{transform:translateY(-6px) scale(1.02);box-shadow:0 15px 30px rgba(0,0,0,.25);background:var(--glass-strong);color:#333;border:2px solid rgba(255,255,255,.8)}
-.bubble.expanded .bubble-header{color:#333}
-.bubble.expanded .bubble-content{display:block;color:#333}
-.bullet-point{margin:10px 0; padding-left:18px; position:relative; font-size:.98rem}
-.bullet-point::before{content:"→"; position:absolute; left:0; color:#e5e0ff; font-weight:700}
-.bubble.expanded .bullet-point::before{color:#667eea}
-.connection-line{display:none}
-.navigation{position:sticky; bottom:0; left:0; right:0; display:flex; gap:12px; justify-content:center; padding:12px max(16px,4vw) calc(12px + var(--safe-b)); z-index:50; background:linear-gradient(180deg,rgba(0,0,0,0) 0%, rgba(27,25,52,.25) 50%, rgba(27,25,52,.5) 100%); backdrop-filter:blur(10px)}
-.nav-btn{flex:1 1 140px; background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.2); padding:14px 18px; border-radius:16px; font-weight:800; font-size:1rem; cursor:pointer; transition:transform .2s ease, background .2s ease; touch-action:manipulation}
-.nav-btn:disabled{opacity:.45; cursor:not-allowed}
-.nav-btn:active{transform:scale(.98)}
-.slide-counter{position:fixed; top:12px; right:12px; padding:8px 14px; border-radius:18px; background:rgba(255,255,255,.15); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.2); color:#fff; font-weight:800; z-index:60}
-.crepi-logo{ position:fixed; top:12px; left:12px; height:42px; padding:6px; border-radius:12px; background:rgba(255,255,255,.75); box-shadow:0 4px 12px rgba(0,0,0,.15); z-index:70 }
-@media (min-width: 900px){
-  .slide.active{justify-content:center}
-  .mindmap-container{min-height:560px}
-  .central-question{position:absolute; width:360px}
-  .connection-line{display:block; position:absolute; background:linear-gradient(45deg,rgba(255,255,255,.3),rgba(255,255,255,.1)); height:2px; opacity:.5; z-index:1}
-  .objective-bubble{position:absolute; top:12%; left:8%}
-  .good-bubble{position:absolute; top:12%; right:8%}
-  .bad-bubble{position:absolute; bottom:14%; left:50%; transform:translateX(-50%)}
-}
-@media (max-width: 899.98px){
-  .slide.active{align-items:stretch}
-  .mindmap-container{display:flex; flex-direction:column; align-items:stretch; gap:14px; min-height:auto}
-  .central-question{order:0; margin:6px auto 6px}
-  .objective-bubble,.good-bubble,.bad-bubble{position:relative; inset:auto; transform:none; order:1}
-  .bubble{width:100%}
-}
-@media (prefers-reduced-motion: reduce){
-  .bubble,.nav-btn{transition:none}
-}
-</style>
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 899.98px)">
 </head>
 <body>
-<!-- Logo CREPI -->
-<img alt="Logo CREPI" class="crepi-logo" src="images/640px-Logo_Fédération_Nationale_des_CREPI_-_2_couleurs.jpg"/>
-<div class="presentation-container">
-<!-- Slide 1: Page de titre -->
-<div class="slide active title-slide">
-<div class="slide-header">
-<h1 class="slide-title">Réussir son Entretien d'Embauche</h1>
-<p class="slide-subtitle">Guide des 18 Questions Essentielles</p>
-<p style="margin-top: 30px; font-size: 1.2em;">Formation Professionnelle • Spécialiste Recrutement</p>
-</div>
-</div>
-<!-- Slide 2: Question 1 -->
-<div class="slide">
-<h1 class="question-title">Question 1 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Présentez-vous"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Évaluer votre capacité de synthèse</div>
-<div class="bullet-point">Comprendre votre parcours et motivation</div>
-<div class="bullet-point">Voir si vous structurez bien votre discours</div>
-<div class="bullet-point">Mesurer votre aisance relationnelle</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Pitch professionnel de 1 à 2 minutes</div>
-<div class="bullet-point">Structure : passé-présent-futur</div>
-<div class="bullet-point">Exemples concrets de réalisations</div>
-<div class="bullet-point">Lien clair avec l'offre d'emploi</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Trop de détails personnels ("je suis né à...")</div>
-<div class="bullet-point">Parcours récité comme un CV</div>
-<div class="bullet-point">Trop long (plus de 3-4 minutes)</div>
-<div class="bullet-point">Manque de structure ou cohérence</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 3: Question 2 -->
-<div class="slide">
-<h1 class="question-title">Question 2 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Parlez-moi de vos qualités et défauts"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Tester votre capacité d'auto-analyse</div>
-<div class="bullet-point">Évaluer votre honnêteté</div>
-<div class="bullet-point">Voir si vos qualités correspondent au poste</div>
-<div class="bullet-point">Mesurer votre maturité professionnelle</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">2-3 qualités avec exemples concrets</div>
-<div class="bullet-point">Qualités adaptées au poste visé</div>
-<div class="bullet-point">1 défaut réel mais travaillé</div>
-<div class="bullet-point">Plan d'amélioration du défaut</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Défauts déguisés en qualités</div>
-<div class="bullet-point">"Je n'ai pas de défauts"</div>
-<div class="bullet-point">Défauts rédhibitoires pour le poste</div>
-<div class="bullet-point">Qualités sans exemples concrets</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 4: Question 3 -->
-<div class="slide">
-<h1 class="question-title">Question 3 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Pourquoi avez-vous quitté votre ancien poste ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Détecter d'éventuels problèmes relationnels</div>
-<div class="bullet-point">Comprendre vos motivations</div>
-<div class="bullet-point">Évaluer votre loyauté</div>
-<div class="bullet-point">Anticiper les risques de départ rapide</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Évolution professionnelle souhaitée</div>
-<div class="bullet-point">Recherche de nouveaux défis</div>
-<div class="bullet-point">Développement de compétences</div>
-<div class="bullet-point">Ton positif sur l'expérience passée</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Critiquer l'ancien employeur</div>
-<div class="bullet-point">Évoquer des conflits personnels</div>
-<div class="bullet-point">Parler uniquement de salaire</div>
-<div class="bullet-point">Manque de reconnaissance ressenti</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 5: Question 4 -->
-<div class="slide">
-<h1 class="question-title">Question 4 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Pourquoi vous et pas un autre candidat ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Identifier votre valeur ajoutée unique</div>
-<div class="bullet-point">Mesurer votre confiance en vous</div>
-<div class="bullet-point">Comprendre ce qui vous différencie</div>
-<div class="bullet-point">Évaluer votre capacité de synthèse</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Combinaison unique de compétences</div>
-<div class="bullet-point">Expériences spécifiques pertinentes</div>
-<div class="bullet-point">Résultats concrets et mesurables</div>
-<div class="bullet-point">Soft skills différenciants</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Arrogance ou prétention excessive</div>
-<div class="bullet-point">Critiquer les autres candidats</div>
-<div class="bullet-point">Réponses trop vagues</div>
-<div class="bullet-point">Manquer de confiance</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 6: Question 5 -->
-<div class="slide">
-<h1 class="question-title">Question 5 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Quelle est votre plus grande fierté professionnelle ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Identifier vos sources de motivation</div>
-<div class="bullet-point">Comprendre vos valeurs professionnelles</div>
-<div class="bullet-point">Évaluer votre capacité de réalisation</div>
-<div class="bullet-point">Mesurer votre niveau d'ambition</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Réalisation concrète avec impact mesurable</div>
-<div class="bullet-point">Défi relevé ou obstacle surmonté</div>
-<div class="bullet-point">Contribution à une équipe ou projet</div>
-<div class="bullet-point">Innovation ou amélioration apportée</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Fierté trop personnelle ou privée</div>
-<div class="bullet-point">Réalisation trop ancienne ou mineure</div>
-<div class="bullet-point">S'attribuer le mérite d'une équipe</div>
-<div class="bullet-point">Manquer d'exemples concrets</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 7: Question 6 -->
-<div class="slide">
-<h1 class="question-title">Question 6 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Dans quel domaine souhaiteriez-vous vous améliorer ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Tester votre capacité d'introspection</div>
-<div class="bullet-point">Évaluer votre désir de progression</div>
-<div class="bullet-point">Identifier vos axes de développement</div>
-<div class="bullet-point">Mesurer votre humilité professionnelle</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Compétence technique à développer</div>
-<div class="bullet-point">Soft skill à renforcer</div>
-<div class="bullet-point">Plan d'action concret pour progresser</div>
-<div class="bullet-point">Lien avec les besoins du poste</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Domaine critique pour le poste visé</div>
-<div class="bullet-point">"Je n'ai rien à améliorer"</div>
-<div class="bullet-point">Réponse trop vague</div>
-<div class="bullet-point">Pas de plan d'amélioration</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 8: Question 7 -->
-<div class="slide">
-<h1 class="question-title">Question 7 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Pourquoi postulez-vous chez nous ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Mesurer votre préparation à l'entretien</div>
-<div class="bullet-point">Évaluer votre motivation réelle</div>
-<div class="bullet-point">Comprendre votre intérêt pour l'entreprise</div>
-<div class="bullet-point">Tester votre connaissance du secteur</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Connaissance précise de l'entreprise</div>
-<div class="bullet-point">Adéquation avec vos valeurs</div>
-<div class="bullet-point">Opportunités d'évolution</div>
-<div class="bullet-point">Projets ou actualités de l'entreprise</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Réponses vagues ("belle entreprise")</div>
-<div class="bullet-point">Focus uniquement sur le salaire</div>
-<div class="bullet-point">Manque de préparation évident</div>
-<div class="bullet-point">Informations erronées</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 9: Question 8 -->
-<div class="slide">
-<h1 class="question-title">Question 8 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Que savez-vous de notre entreprise ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Vérifier votre niveau de préparation</div>
-<div class="bullet-point">Mesurer votre intérêt réel</div>
-<div class="bullet-point">Évaluer vos sources d'information</div>
-<div class="bullet-point">Tester votre curiosité professionnelle</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Activité principale et marché</div>
-<div class="bullet-point">Chiffres clés récents</div>
-<div class="bullet-point">Actualités et projets en cours</div>
-<div class="bullet-point">Valeurs et culture d'entreprise</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">"J'ai regardé votre site web"</div>
-<div class="bullet-point">Informations obsolètes ou erronées</div>
-<div class="bullet-point">Confusion avec un concurrent</div>
-<div class="bullet-point">Réponses trop superficielles</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 10: Question 9 -->
-<div class="slide">
-<h1 class="question-title">Question 9 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Où vous voyez-vous dans 5 ans ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Évaluer votre ambition</div>
-<div class="bullet-point">Comprendre votre projet de carrière</div>
-<div class="bullet-point">Mesurer votre potentiel de fidélisation</div>
-<div class="bullet-point">Voir la cohérence de vos objectifs</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Vision réaliste et progressive</div>
-<div class="bullet-point">Évolution cohérente avec le poste</div>
-<div class="bullet-point">Développement de compétences</div>
-<div class="bullet-point">Prise de responsabilités graduelles</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Vouloir rapidement le poste du recruteur</div>
-<div class="bullet-point">Créer sa propre entreprise rapidement</div>
-<div class="bullet-point">Objectifs déconnectés du poste</div>
-<div class="bullet-point">Ambitions irréalistes</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 11: Question 10 -->
-<div class="slide">
-<h1 class="question-title">Question 10 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Pourquoi ce poste vous intéresse-t-il ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Mesurer votre motivation pour le rôle précis</div>
-<div class="bullet-point">Comprendre votre analyse du poste</div>
-<div class="bullet-point">Évaluer l'adéquation avec vos aspirations</div>
-<div class="bullet-point">Identifier vos drivers professionnels</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Analyse fine des missions du poste</div>
-<div class="bullet-point">Lien avec vos compétences</div>
-<div class="bullet-point">Opportunités de développement identifiées</div>
-<div class="bullet-point">Défis professionnels attractifs</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Confusion avec les missions de l'entreprise</div>
-<div class="bullet-point">Réponses génériques</div>
-<div class="bullet-point">Focus uniquement sur les avantages personnels</div>
-<div class="bullet-point">Méconnaissance du détail du poste</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 12: Question 11 -->
-<div class="slide">
-<h1 class="question-title">Question 11 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Qu'est-ce qui vous motive le plus dans votre travail ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Comprendre vos drivers intrinsèques</div>
-<div class="bullet-point">Évaluer l'adéquation avec la culture</div>
-<div class="bullet-point">Anticiper votre engagement futur</div>
-<div class="bullet-point">Identifier vos leviers de performance</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Défis intellectuels et apprentissage</div>
-<div class="bullet-point">Impact et sens du travail</div>
-<div class="bullet-point">Collaboration et travail d'équipe</div>
-<div class="bullet-point">Autonomie et prise de responsabilités</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Focus exclusif sur la rémunération</div>
-<div class="bullet-point">Motivations trop personnelles</div>
-<div class="bullet-point">Réponses déconnectées du poste</div>
-<div class="bullet-point">Manque d'authenticité</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 13: Question 12 -->
-<div class="slide">
-<h1 class="question-title">Question 12 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Racontez-moi un échec professionnel"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Tester votre capacité d'auto-critique</div>
-<div class="bullet-point">Évaluer votre capacité de rebond</div>
-<div class="bullet-point">Comprendre votre gestion des difficultés</div>
-<div class="bullet-point">Mesurer votre apprentissage des erreurs</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Exemple concret et récent</div>
-<div class="bullet-point">Prise de responsabilité claire</div>
-<div class="bullet-point">Analyse des causes</div>
-<div class="bullet-point">Leçons apprises et améliorations</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Rejeter la faute sur les autres</div>
-<div class="bullet-point">Échec trop personnel ou ancien</div>
-<div class="bullet-point">Pas d'apprentissage identifié</div>
-<div class="bullet-point">"Je n'ai jamais échoué"</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 14: Question 13 -->
-<div class="slide">
-<h1 class="question-title">Question 13 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Comment gérez-vous le stress ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Évaluer votre résistance à la pression</div>
-<div class="bullet-point">Comprendre vos méthodes de gestion</div>
-<div class="bullet-point">Anticiper votre comportement en crise</div>
-<div class="bullet-point">Mesurer votre équilibre professionnel</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Méthodes concrètes d'organisation</div>
-<div class="bullet-point">Techniques de priorisation</div>
-<div class="bullet-point">Communication en situation de crise</div>
-<div class="bullet-point">Exemples de gestion réussie</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">"Je ne suis jamais stressé"</div>
-<div class="bullet-point">Méthodes peu professionnelles</div>
-<div class="bullet-point">Évitement ou fuite face au problème</div>
-<div class="bullet-point">Impact négatif sur l'équipe</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 15: Question 14 -->
-<div class="slide">
-<h1 class="question-title">Question 14 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Décrivez votre style de management"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Comprendre votre approche managériale</div>
-<div class="bullet-point">Évaluer votre expérience d'encadrement</div>
-<div class="bullet-point">Mesurer votre adaptabilité</div>
-<div class="bullet-point">Anticiper votre intégration dans l'équipe</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Style adaptatif selon les situations</div>
-<div class="bullet-point">Équilibre directive/participative</div>
-<div class="bullet-point">Focus sur le développement des équipes</div>
-<div class="bullet-point">Exemples concrets de management</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Style trop rigide ou trop laxiste</div>
-<div class="bullet-point">Manque d'exemples concrets</div>
-<div class="bullet-point">Focus uniquement sur le contrôle</div>
-<div class="bullet-point">"Je laisse faire, ils sont autonomes"</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 16: Question 15 -->
-<div class="slide">
-<h1 class="question-title">Question 15 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Comment comptez-vous réussir dans ce poste ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Évaluer votre compréhension du poste</div>
-<div class="bullet-point">Mesurer votre méthode de travail</div>
-<div class="bullet-point">Comprendre votre plan d'action</div>
-<div class="bullet-point">Anticiper votre intégration</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Plan d'action structuré (30-60-90 jours)</div>
-<div class="bullet-point">Compréhension fine des enjeux</div>
-<div class="bullet-point">Période d'écoute et d'observation</div>
-<div class="bullet-point">Objectifs mesurables à court terme</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Réponses vagues ("donner le meilleur")</div>
-<div class="bullet-point">Vouloir tout changer immédiatement</div>
-<div class="bullet-point">Méconnaissance des enjeux du poste</div>
-<div class="bullet-point">Pas de méthodologie claire</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 17: Question 16 -->
-<div class="slide">
-<h1 class="question-title">Question 16 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Avez-vous des questions ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Mesurer votre intérêt réel pour le poste</div>
-<div class="bullet-point">Évaluer votre niveau de préparation</div>
-<div class="bullet-point">Comprendre vos priorités</div>
-<div class="bullet-point">Tester votre capacité d'analyse</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Bonnes questions</div>
-<div class="bubble-content">
-<div class="bullet-point">Questions sur les missions et défis</div>
-<div class="bullet-point">Organisation et fonctionnement de l'équipe</div>
-<div class="bullet-point">Opportunités d'évolution et formation</div>
-<div class="bullet-point">Projets à venir et enjeux stratégiques</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Questions à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">"Non, vous avez tout dit"</div>
-<div class="bullet-point">Questions sur salaire/congés en premier</div>
-<div class="bullet-point">Informations déjà disponibles publiquement</div>
-<div class="bullet-point">Questions trop personnelles sur le recruteur</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 18: Question 17 -->
-<div class="slide">
-<h1 class="question-title">Question 17 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Quelles sont vos prétentions salariales ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Évaluer l'adéquation avec le budget</div>
-<div class="bullet-point">Tester votre connaissance du marché</div>
-<div class="bullet-point">Comprendre vos priorités de négociation</div>
-<div class="bullet-point">Anticiper les discussions contractuelles</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Fourchette basée sur l'étude de marché</div>
-<div class="bullet-point">Prise en compte de l'expérience</div>
-<div class="bullet-point">Ouverture à la discussion</div>
-<div class="bullet-point">Considération de l'ensemble du package</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Chiffre unique et non négociable</div>
-<div class="bullet-point">Attentes déconnectées du marché</div>
-<div class="bullet-point">"Je veux juste plus qu'avant"</div>
-<div class="bullet-point">Focus uniquement sur le salaire fixe</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 19: Question 18 -->
-<div class="slide">
-<h1 class="question-title">Question 18 sur 18</h1>
-<div class="mindmap-container">
-<div class="connection-line line-objective"></div>
-<div class="connection-line line-good"></div>
-<div class="connection-line line-bad"></div>
-<div class="central-question">"Avez-vous d'autres pistes de recrutement ?"</div>
-<div class="bubble objective-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">🎯 Objectif du recruteur</div>
-<div class="bubble-content">
-<div class="bullet-point">Évaluer l'urgence de la décision</div>
-<div class="bullet-point">Mesurer votre attractivité sur le marché</div>
-<div class="bullet-point">Comprendre votre motivation spécifique</div>
-<div class="bullet-point">Anticiper la négociation</div>
-</div>
-</div>
-<div class="bubble good-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">✅ Réponses attendues</div>
-<div class="bubble-content">
-<div class="bullet-point">Honnêteté mesurée sur vos démarches</div>
-<div class="bullet-point">Réaffirmation de votre intérêt pour CE poste</div>
-<div class="bullet-point">Explication de ce qui vous attire ici</div>
-<div class="bullet-point">Montrer votre valeur sans menacer</div>
-</div>
-</div>
-<div class="bubble bad-bubble" onclick="toggleBubble(this)">
-<div class="bubble-header">❌ Réponses à éviter</div>
-<div class="bubble-content">
-<div class="bullet-point">Mentir complètement sur votre situation</div>
-<div class="bullet-point">Faire du chantage ou menacer</div>
-<div class="bullet-point">Donner trop de détails sur la concurrence</div>
-<div class="bullet-point">Paraître désespéré ou trop sûr de vous</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 20: Conclusion -->
-<div class="slide title-slide">
-<div class="slide-header">
-<h1 class="slide-title" style="font-size: 3em;">Conclusion</h1>
-<p class="slide-subtitle" style="font-size: 1.5em; margin-top: 40px;">
+    <!-- Logo CREPI -->
+    <img src="images/640px-Logo_Fédération_Nationale_des_CREPI_-_2_couleurs.jpg" 
+         alt="Logo CREPI" 
+         class="crepi-logo">
+    <div class="presentation-container">
+        <!-- Slide 1: Page de titre -->
+        <div class="slide active title-slide">
+            <div class="slide-header">
+                <h1 class="slide-title">Réussir son Entretien d'Embauche</h1>
+                <p class="slide-subtitle">Guide des 18 Questions Essentielles</p>
+                <p style="margin-top: 30px; font-size: 1.2em;">Formation Professionnelle • Spécialiste Recrutement</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Question 1 -->
+        <div class="slide">
+            <h1 class="question-title">Question 1 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Présentez-vous"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Évaluer votre capacité de synthèse</div>
+                        <div class="bullet-point">Comprendre votre parcours et motivation</div>
+                        <div class="bullet-point">Voir si vous structurez bien votre discours</div>
+                        <div class="bullet-point">Mesurer votre aisance relationnelle</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Pitch professionnel de 1 à 2 minutes</div>
+                        <div class="bullet-point">Structure : passé-présent-futur</div>
+                        <div class="bullet-point">Exemples concrets de réalisations</div>
+                        <div class="bullet-point">Lien clair avec l'offre d'emploi</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Trop de détails personnels ("je suis né à...")</div>
+                        <div class="bullet-point">Parcours récité comme un CV</div>
+                        <div class="bullet-point">Trop long (plus de 3-4 minutes)</div>
+                        <div class="bullet-point">Manque de structure ou cohérence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Question 2 -->
+        <div class="slide">
+            <h1 class="question-title">Question 2 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Parlez-moi de vos qualités et défauts"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Tester votre capacité d'auto-analyse</div>
+                        <div class="bullet-point">Évaluer votre honnêteté</div>
+                        <div class="bullet-point">Voir si vos qualités correspondent au poste</div>
+                        <div class="bullet-point">Mesurer votre maturité professionnelle</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">2-3 qualités avec exemples concrets</div>
+                        <div class="bullet-point">Qualités adaptées au poste visé</div>
+                        <div class="bullet-point">1 défaut réel mais travaillé</div>
+                        <div class="bullet-point">Plan d'amélioration du défaut</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Défauts déguisés en qualités</div>
+                        <div class="bullet-point">"Je n'ai pas de défauts"</div>
+                        <div class="bullet-point">Défauts rédhibitoires pour le poste</div>
+                        <div class="bullet-point">Qualités sans exemples concrets</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Question 3 -->
+        <div class="slide">
+            <h1 class="question-title">Question 3 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Pourquoi avez-vous quitté votre ancien poste ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Détecter d'éventuels problèmes relationnels</div>
+                        <div class="bullet-point">Comprendre vos motivations</div>
+                        <div class="bullet-point">Évaluer votre loyauté</div>
+                        <div class="bullet-point">Anticiper les risques de départ rapide</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Évolution professionnelle souhaitée</div>
+                        <div class="bullet-point">Recherche de nouveaux défis</div>
+                        <div class="bullet-point">Développement de compétences</div>
+                        <div class="bullet-point">Ton positif sur l'expérience passée</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Critiquer l'ancien employeur</div>
+                        <div class="bullet-point">Évoquer des conflits personnels</div>
+                        <div class="bullet-point">Parler uniquement de salaire</div>
+                        <div class="bullet-point">Manque de reconnaissance ressenti</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Question 4 -->
+        <div class="slide">
+            <h1 class="question-title">Question 4 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Pourquoi vous et pas un autre candidat ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Identifier votre valeur ajoutée unique</div>
+                        <div class="bullet-point">Mesurer votre confiance en vous</div>
+                        <div class="bullet-point">Comprendre ce qui vous différencie</div>
+                        <div class="bullet-point">Évaluer votre capacité de synthèse</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Combinaison unique de compétences</div>
+                        <div class="bullet-point">Expériences spécifiques pertinentes</div>
+                        <div class="bullet-point">Résultats concrets et mesurables</div>
+                        <div class="bullet-point">Soft skills différenciants</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Arrogance ou prétention excessive</div>
+                        <div class="bullet-point">Critiquer les autres candidats</div>
+                        <div class="bullet-point">Réponses trop vagues</div>
+                        <div class="bullet-point">Manquer de confiance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Question 5 -->
+        <div class="slide">
+            <h1 class="question-title">Question 5 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Quelle est votre plus grande fierté professionnelle ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Identifier vos sources de motivation</div>
+                        <div class="bullet-point">Comprendre vos valeurs professionnelles</div>
+                        <div class="bullet-point">Évaluer votre capacité de réalisation</div>
+                        <div class="bullet-point">Mesurer votre niveau d'ambition</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Réalisation concrète avec impact mesurable</div>
+                        <div class="bullet-point">Défi relevé ou obstacle surmonté</div>
+                        <div class="bullet-point">Contribution à une équipe ou projet</div>
+                        <div class="bullet-point">Innovation ou amélioration apportée</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Fierté trop personnelle ou privée</div>
+                        <div class="bullet-point">Réalisation trop ancienne ou mineure</div>
+                        <div class="bullet-point">S'attribuer le mérite d'une équipe</div>
+                        <div class="bullet-point">Manquer d'exemples concrets</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Question 6 -->
+        <div class="slide">
+            <h1 class="question-title">Question 6 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Dans quel domaine souhaiteriez-vous vous améliorer ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Tester votre capacité d'introspection</div>
+                        <div class="bullet-point">Évaluer votre désir de progression</div>
+                        <div class="bullet-point">Identifier vos axes de développement</div>
+                        <div class="bullet-point">Mesurer votre humilité professionnelle</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Compétence technique à développer</div>
+                        <div class="bullet-point">Soft skill à renforcer</div>
+                        <div class="bullet-point">Plan d'action concret pour progresser</div>
+                        <div class="bullet-point">Lien avec les besoins du poste</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Domaine critique pour le poste visé</div>
+                        <div class="bullet-point">"Je n'ai rien à améliorer"</div>
+                        <div class="bullet-point">Réponse trop vague</div>
+                        <div class="bullet-point">Pas de plan d'amélioration</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Question 7 -->
+        <div class="slide">
+            <h1 class="question-title">Question 7 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Pourquoi postulez-vous chez nous ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Mesurer votre préparation à l'entretien</div>
+                        <div class="bullet-point">Évaluer votre motivation réelle</div>
+                        <div class="bullet-point">Comprendre votre intérêt pour l'entreprise</div>
+                        <div class="bullet-point">Tester votre connaissance du secteur</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Connaissance précise de l'entreprise</div>
+                        <div class="bullet-point">Adéquation avec vos valeurs</div>
+                        <div class="bullet-point">Opportunités d'évolution</div>
+                        <div class="bullet-point">Projets ou actualités de l'entreprise</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Réponses vagues ("belle entreprise")</div>
+                        <div class="bullet-point">Focus uniquement sur le salaire</div>
+                        <div class="bullet-point">Manque de préparation évident</div>
+                        <div class="bullet-point">Informations erronées</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Question 8 -->
+        <div class="slide">
+            <h1 class="question-title">Question 8 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Que savez-vous de notre entreprise ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Vérifier votre niveau de préparation</div>
+                        <div class="bullet-point">Mesurer votre intérêt réel</div>
+                        <div class="bullet-point">Évaluer vos sources d'information</div>
+                        <div class="bullet-point">Tester votre curiosité professionnelle</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Activité principale et marché</div>
+                        <div class="bullet-point">Chiffres clés récents</div>
+                        <div class="bullet-point">Actualités et projets en cours</div>
+                        <div class="bullet-point">Valeurs et culture d'entreprise</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">"J'ai regardé votre site web"</div>
+                        <div class="bullet-point">Informations obsolètes ou erronées</div>
+                        <div class="bullet-point">Confusion avec un concurrent</div>
+                        <div class="bullet-point">Réponses trop superficielles</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Question 9 -->
+        <div class="slide">
+            <h1 class="question-title">Question 9 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Où vous voyez-vous dans 5 ans ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Évaluer votre ambition</div>
+                        <div class="bullet-point">Comprendre votre projet de carrière</div>
+                        <div class="bullet-point">Mesurer votre potentiel de fidélisation</div>
+                        <div class="bullet-point">Voir la cohérence de vos objectifs</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Vision réaliste et progressive</div>
+                        <div class="bullet-point">Évolution cohérente avec le poste</div>
+                        <div class="bullet-point">Développement de compétences</div>
+                        <div class="bullet-point">Prise de responsabilités graduelles</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Vouloir rapidement le poste du recruteur</div>
+                        <div class="bullet-point">Créer sa propre entreprise rapidement</div>
+                        <div class="bullet-point">Objectifs déconnectés du poste</div>
+                        <div class="bullet-point">Ambitions irréalistes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Question 10 -->
+        <div class="slide">
+            <h1 class="question-title">Question 10 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Pourquoi ce poste vous intéresse-t-il ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Mesurer votre motivation pour le rôle précis</div>
+                        <div class="bullet-point">Comprendre votre analyse du poste</div>
+                        <div class="bullet-point">Évaluer l'adéquation avec vos aspirations</div>
+                        <div class="bullet-point">Identifier vos drivers professionnels</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Analyse fine des missions du poste</div>
+                        <div class="bullet-point">Lien avec vos compétences</div>
+                        <div class="bullet-point">Opportunités de développement identifiées</div>
+                        <div class="bullet-point">Défis professionnels attractifs</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Confusion avec les missions de l'entreprise</div>
+                        <div class="bullet-point">Réponses génériques</div>
+                        <div class="bullet-point">Focus uniquement sur les avantages personnels</div>
+                        <div class="bullet-point">Méconnaissance du détail du poste</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Question 11 -->
+        <div class="slide">
+            <h1 class="question-title">Question 11 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Qu'est-ce qui vous motive le plus dans votre travail ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Comprendre vos drivers intrinsèques</div>
+                        <div class="bullet-point">Évaluer l'adéquation avec la culture</div>
+                        <div class="bullet-point">Anticiper votre engagement futur</div>
+                        <div class="bullet-point">Identifier vos leviers de performance</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Défis intellectuels et apprentissage</div>
+                        <div class="bullet-point">Impact et sens du travail</div>
+                        <div class="bullet-point">Collaboration et travail d'équipe</div>
+                        <div class="bullet-point">Autonomie et prise de responsabilités</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Focus exclusif sur la rémunération</div>
+                        <div class="bullet-point">Motivations trop personnelles</div>
+                        <div class="bullet-point">Réponses déconnectées du poste</div>
+                        <div class="bullet-point">Manque d'authenticité</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Question 12 -->
+        <div class="slide">
+            <h1 class="question-title">Question 12 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Racontez-moi un échec professionnel"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Tester votre capacité d'auto-critique</div>
+                        <div class="bullet-point">Évaluer votre capacité de rebond</div>
+                        <div class="bullet-point">Comprendre votre gestion des difficultés</div>
+                        <div class="bullet-point">Mesurer votre apprentissage des erreurs</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Exemple concret et récent</div>
+                        <div class="bullet-point">Prise de responsabilité claire</div>
+                        <div class="bullet-point">Analyse des causes</div>
+                        <div class="bullet-point">Leçons apprises et améliorations</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Rejeter la faute sur les autres</div>
+                        <div class="bullet-point">Échec trop personnel ou ancien</div>
+                        <div class="bullet-point">Pas d'apprentissage identifié</div>
+                        <div class="bullet-point">"Je n'ai jamais échoué"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Question 13 -->
+        <div class="slide">
+            <h1 class="question-title">Question 13 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Comment gérez-vous le stress ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Évaluer votre résistance à la pression</div>
+                        <div class="bullet-point">Comprendre vos méthodes de gestion</div>
+                        <div class="bullet-point">Anticiper votre comportement en crise</div>
+                        <div class="bullet-point">Mesurer votre équilibre professionnel</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Méthodes concrètes d'organisation</div>
+                        <div class="bullet-point">Techniques de priorisation</div>
+                        <div class="bullet-point">Communication en situation de crise</div>
+                        <div class="bullet-point">Exemples de gestion réussie</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">"Je ne suis jamais stressé"</div>
+                        <div class="bullet-point">Méthodes peu professionnelles</div>
+                        <div class="bullet-point">Évitement ou fuite face au problème</div>
+                        <div class="bullet-point">Impact négatif sur l'équipe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Question 14 -->
+        <div class="slide">
+            <h1 class="question-title">Question 14 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Décrivez votre style de management"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Comprendre votre approche managériale</div>
+                        <div class="bullet-point">Évaluer votre expérience d'encadrement</div>
+                        <div class="bullet-point">Mesurer votre adaptabilité</div>
+                        <div class="bullet-point">Anticiper votre intégration dans l'équipe</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Style adaptatif selon les situations</div>
+                        <div class="bullet-point">Équilibre directive/participative</div>
+                        <div class="bullet-point">Focus sur le développement des équipes</div>
+                        <div class="bullet-point">Exemples concrets de management</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Style trop rigide ou trop laxiste</div>
+                        <div class="bullet-point">Manque d'exemples concrets</div>
+                        <div class="bullet-point">Focus uniquement sur le contrôle</div>
+                        <div class="bullet-point">"Je laisse faire, ils sont autonomes"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 16: Question 15 -->
+        <div class="slide">
+            <h1 class="question-title">Question 15 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Comment comptez-vous réussir dans ce poste ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Évaluer votre compréhension du poste</div>
+                        <div class="bullet-point">Mesurer votre méthode de travail</div>
+                        <div class="bullet-point">Comprendre votre plan d'action</div>
+                        <div class="bullet-point">Anticiper votre intégration</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Plan d'action structuré (30-60-90 jours)</div>
+                        <div class="bullet-point">Compréhension fine des enjeux</div>
+                        <div class="bullet-point">Période d'écoute et d'observation</div>
+                        <div class="bullet-point">Objectifs mesurables à court terme</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Réponses vagues ("donner le meilleur")</div>
+                        <div class="bullet-point">Vouloir tout changer immédiatement</div>
+                        <div class="bullet-point">Méconnaissance des enjeux du poste</div>
+                        <div class="bullet-point">Pas de méthodologie claire</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 17: Question 16 -->
+        <div class="slide">
+            <h1 class="question-title">Question 16 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Avez-vous des questions ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Mesurer votre intérêt réel pour le poste</div>
+                        <div class="bullet-point">Évaluer votre niveau de préparation</div>
+                        <div class="bullet-point">Comprendre vos priorités</div>
+                        <div class="bullet-point">Tester votre capacité d'analyse</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Bonnes questions</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Questions sur les missions et défis</div>
+                        <div class="bullet-point">Organisation et fonctionnement de l'équipe</div>
+                        <div class="bullet-point">Opportunités d'évolution et formation</div>
+                        <div class="bullet-point">Projets à venir et enjeux stratégiques</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Questions à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">"Non, vous avez tout dit"</div>
+                        <div class="bullet-point">Questions sur salaire/congés en premier</div>
+                        <div class="bullet-point">Informations déjà disponibles publiquement</div>
+                        <div class="bullet-point">Questions trop personnelles sur le recruteur</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 18: Question 17 -->
+        <div class="slide">
+            <h1 class="question-title">Question 17 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Quelles sont vos prétentions salariales ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Évaluer l'adéquation avec le budget</div>
+                        <div class="bullet-point">Tester votre connaissance du marché</div>
+                        <div class="bullet-point">Comprendre vos priorités de négociation</div>
+                        <div class="bullet-point">Anticiper les discussions contractuelles</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Fourchette basée sur l'étude de marché</div>
+                        <div class="bullet-point">Prise en compte de l'expérience</div>
+                        <div class="bullet-point">Ouverture à la discussion</div>
+                        <div class="bullet-point">Considération de l'ensemble du package</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Chiffre unique et non négociable</div>
+                        <div class="bullet-point">Attentes déconnectées du marché</div>
+                        <div class="bullet-point">"Je veux juste plus qu'avant"</div>
+                        <div class="bullet-point">Focus uniquement sur le salaire fixe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19: Question 18 -->
+        <div class="slide">
+            <h1 class="question-title">Question 18 sur 18</h1>
+            <div class="mindmap-container">
+                <div class="connection-line line-objective"></div>
+                <div class="connection-line line-good"></div>
+                <div class="connection-line line-bad"></div>
+                
+                <div class="central-question">"Avez-vous d'autres pistes de recrutement ?"</div>
+                
+                <div class="bubble objective-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">🎯 Objectif du recruteur</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Évaluer l'urgence de la décision</div>
+                        <div class="bullet-point">Mesurer votre attractivité sur le marché</div>
+                        <div class="bullet-point">Comprendre votre motivation spécifique</div>
+                        <div class="bullet-point">Anticiper la négociation</div>
+                    </div>
+                </div>
+                
+                <div class="bubble good-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">✅ Réponses attendues</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Honnêteté mesurée sur vos démarches</div>
+                        <div class="bullet-point">Réaffirmation de votre intérêt pour CE poste</div>
+                        <div class="bullet-point">Explication de ce qui vous attire ici</div>
+                        <div class="bullet-point">Montrer votre valeur sans menacer</div>
+                    </div>
+                </div>
+                
+                <div class="bubble bad-bubble" onclick="toggleBubble(this)">
+                    <div class="bubble-header">❌ Réponses à éviter</div>
+                    <div class="bubble-content">
+                        <div class="bullet-point">Mentir complètement sur votre situation</div>
+                        <div class="bullet-point">Faire du chantage ou menacer</div>
+                        <div class="bullet-point">Donner trop de détails sur la concurrence</div>
+                        <div class="bullet-point">Paraître désespéré ou trop sûr de vous</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 20: Conclusion -->
+        <div class="slide title-slide">
+            <div class="slide-header">
+                <h1 class="slide-title" style="font-size: 3em;">Conclusion</h1>
+                <p class="slide-subtitle" style="font-size: 1.5em; margin-top: 40px;">
                     La préparation est la clé du succès
                 </p>
-<div style="margin-top: 50px; font-size: 1.2em; line-height: 1.8;">
-<p>✨ <strong>18 Questions maîtrisées</strong> pour être prêt à tout</p>
-<p>🎯 <strong>Entraînez-vous</strong> à présenter chaque réponse</p>
-<p>🔥 <strong>Adaptez</strong> votre discours à chaque entreprise</p>
-<p>😊 <strong>Restez authentique</strong> et professionnel</p>
-</div>
-<p style="margin-top: 60px; font-size: 1.4em; font-weight: bold;">
+                <div style="margin-top: 50px; font-size: 1.2em; line-height: 1.8;">
+                    <p>✨ <strong>18 Questions maîtrisées</strong> pour être prêt à tout</p>
+                    <p>🎯 <strong>Entraînez-vous</strong> à présenter chaque réponse</p>
+                    <p>🔥 <strong>Adaptez</strong> votre discours à chaque entreprise</p>
+                    <p>😊 <strong>Restez authentique</strong> et professionnel</p>
+                </div>
+                <p style="margin-top: 60px; font-size: 1.4em; font-weight: bold;">
                     Bonne chance dans vos entretiens ! 🚀
                 </p>
-</div>
-</div>
-<!-- Navigation -->
-<div class="navigation">
-<button class="nav-btn" id="prevBtn" onclick="previousSlide()">← Précédent</button>
-<button class="nav-btn" id="nextBtn" onclick="nextSlide()">Suivant →</button>
-<button class="nav-btn" id="fsBtn">⛶ Plein écran</button></div>
-<div class="slide-counter" id="slideCounter">1 / 20</div>
-</div>
-<script>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-btn" onclick="previousSlide()" id="prevBtn">← Précédent</button>
+            <button class="nav-btn" onclick="nextSlide()" id="nextBtn">Suivant →</button>
+        
+      <button class="nav-btn" id="fsBtn" type="button">⛶ Plein écran</button>
+    </div>
+        
+        <div class="slide-counter" id="slideCounter">1 / 20</div>
+    </div>
+
+    <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
@@ -1241,38 +1283,26 @@ body{overflow:auto !important; background:linear-gradient(135deg,#667eea 0%,#764
 
         // Debug info
         console.log(`Présentation initialisée avec ${totalSlides} slides`);
-    </script>
-
-<script>
+    
+// ===== Fullscreen toggle (does not change layout) =====
 (function(){
-  const fsBtn = document.getElementById('fsBtn');
-  if(fsBtn){
-    fsBtn.addEventListener('click', () => {
-      const el = document.documentElement;
-      if (!document.fullscreenElement) {
-        (el.requestFullscreen && el.requestFullscreen()) ||
-        (el.webkitRequestFullscreen && el.webkitRequestFullscreen());
-      } else {
-        (document.exitFullscreen && document.exitFullscreen()) ||
-        (document.webkitExitFullscreen && document.webkitExitFullscreen());
-      }
-    });
+  const el = document.documentElement;
+  const btn = document.getElementById('fsBtn');
+  if(!btn) return;
+  function isFs(){
+    return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement;
   }
-  // Touch swipe
-  let touchStartX=null, touchStartY=null;
-  const threshold = 40;
-  window.addEventListener('touchstart', e=>{
-    const t=e.changedTouches[0]; touchStartX=t.clientX; touchStartY=t.clientY;
-  }, {passive:true});
-  window.addEventListener('touchend', e=>{
-    const t=e.changedTouches[0]; if(touchStartX==null) return;
-    const dx=t.clientX - touchStartX; const dy=t.clientY - touchStartY;
-    if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > threshold){
-      if(dx < 0) { if(window.nextSlide) nextSlide(); } else { if(window.previousSlide) previousSlide(); }
-    }
-    touchStartX=touchStartY=null;
-  }, {passive:true});
+  function enter(){
+    (el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || function(){})();
+  }
+  function exit(){
+    (document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || function(){})();
+  }
+  btn.addEventListener('click', function(){
+    isFs() ? exit() : enter();
+  });
 })();
+
 </script>
 </body>
 </html>

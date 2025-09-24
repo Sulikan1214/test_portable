@@ -1,0 +1,89 @@
+
+/* Mobile-only overrides: keep desktop IDENTIQUE */
+/* Chargé uniquement si largeur <= 900px grâce au media attribute du <link> */
+
+:root{
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+
+/* Empêche les débordements et améliore la lisibilité */
+body{
+  overflow:auto;
+}
+
+/* Les slides gardent leur style de bureau; on n'ajuste que la disposition */
+.slide{
+  display:block !important;
+  min-height:auto !important;
+  padding:16px 16px 90px !important; /* place pour la nav collante */
+  overflow:visible !important;
+}
+
+/* Titre adaptatif */
+.slide-title{ font-size: clamp(1.6rem, 6vw, 2.4rem) !important; }
+.slide-subtitle{ font-size: clamp(1rem, 4.5vw, 1.2rem) !important; }
+
+/* Mindmap: on empile verticalement sur mobile */
+.mindmap-container{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:stretch !important;
+  gap:12px !important;
+  min-height:auto !important;
+}
+
+.central-question{
+  position:relative !important;
+  transform:none !important;
+  margin:6px auto 8px !important;
+  width:100% !important;
+  max-width:520px !important;
+  text-align:center !important;
+}
+
+/* Les bulles prennent toute la largeur disponible */
+.bubble{
+  position:relative !important;
+  inset:auto !important;
+  transform:none !important;
+  width:100% !important;
+  max-width:100% !important;
+}
+
+.objective-bubble,.good-bubble,.bad-bubble{
+  position:relative !important;
+  inset:auto !important;
+  transform:none !important;
+}
+
+/* Masque les lignes de connexion qui n'ont pas de sens en pile verticale */
+.connection-line{
+  display:none !important;
+}
+
+/* Navigation collante et confortable au pouce */
+.navigation{
+  position:sticky !important;
+  bottom:0; left:0; right:0;
+  padding:10px 12px calc(10px + var(--safe-b)) !important;
+  background:rgba(255,255,255,0.9) !important;
+  backdrop-filter: blur(8px) !important;
+  border-top: 1px solid rgba(0,0,0,0.08) !important;
+  display:flex !important;
+  gap:10px !important;
+  z-index:999 !important;
+}
+
+.nav-btn{
+  flex:1 1 auto !important;
+  font-size:1rem !important;
+  padding:12px 14px !important;
+}
+
+/* Compteur plus discret */
+.slide-counter{
+  position:fixed !important;
+  top:auto !important; bottom:80px !important; right:12px !important;
+  background:rgba(0,0,0,0.5) !important; color:#fff !important;
+  padding:6px 10px !important; border-radius:16px !important; z-index:1000 !important;
+}
