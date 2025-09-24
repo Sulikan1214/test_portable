@@ -87,3 +87,38 @@ body{
   background:rgba(0,0,0,0.5) !important; color:#fff !important;
   padding:6px 10px !important; border-radius:16px !important; z-index:1000 !important;
 }
+
+
+/* ====== Défilement latéral (mobile uniquement) ====== */
+#slidesTrack{
+  display:flex !important;
+  flex-direction:row !important;
+  width:100% !important;
+  height:100dvh !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  scroll-snap-type:x mandatory !important;
+  -webkit-overflow-scrolling: touch !important;
+  scroll-behavior:smooth !important;
+}
+
+#slidesTrack::-webkit-scrollbar{ display:none; }
+
+/* Chaque slide occupe toute la largeur de l'écran et s'aligne sur le snap */
+#slidesTrack .slide{
+  flex: 0 0 100% !important;
+  max-width:100% !important;
+  height:100dvh !important;
+  scroll-snap-align:start !important;
+  display:block !important;
+  overflow:auto !important; /* si le contenu est long, la slide elle-même scrolle */
+  padding:16px 16px 90px !important; /* place pour la nav en bas */
+}
+
+/* On neutralise l'ancien mode "active" sur mobile (le track gère la visibilité) */
+@supports (scroll-snap-type: x mandatory){
+  .slide{ display:block !important; } /* visible, mais placée dans un carrousel */
+}
+
+/* La navigation reste collante au bas de l'écran */
+.presentation-container{ overflow:hidden !important; }

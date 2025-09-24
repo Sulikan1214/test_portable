@@ -1303,6 +1303,76 @@ body{
   });
 })();
 
+
+
+// ===== Mobile horizontal pager bootstrap =====
+(function(){
+  const mq = window.matchMedia('(max-width: 899.98px)');
+  if(!mq.matches) return; // Desktop: no change
+
+  const container = document.querySelector('.presentation-container');
+  if(!container) return;
+
+  // If already bootstrapped, skip
+  if(document.getElementById('slidesTrack')) return;
+
+  // Create the horizontal track and move slides into it
+  const track = document.createElement('div');
+  track.id = 'slidesTrack';
+
+  // Collect existing slide elements
+  const slides = Array.from(container.querySelectorAll(':scope > .slide'));
+  // Insert track before navigation (if present), else append at end
+  const nav = container.querySelector(':scope > .navigation');
+  if(nav) container.insertBefore(track, nav); else container.appendChild(track);
+
+  slides.forEach(s => track.appendChild(s));
+
+  // When changing slide, also scroll horizontally
+  const allSlides = () => Array.from(track.querySelectorAll('.slide'));
+  function scrollToCurrent(){
+    const s = allSlides()[currentSlide];
+    if(s) s.scrollIntoView({behavior:'smooth', inline:'start', block:'nearest'});
+  }
+
+  // Patch next/previous functions if they exist
+  if(typeof window.nextSlide === 'function'){
+    const _next = window.nextSlide;
+    window.nextSlide = function(){ _next(); scrollToCurrent(); };
+  }
+  if(typeof window.previousSlide === 'function'){
+    const _prev = window.previousSlide;
+    window.previousSlide = function(){ _prev(); scrollToCurrent(); };
+  }
+
+  // Also sync when user swipes manually
+  let syncTimer=null;
+  track.addEventListener('scroll', function(){
+    if(syncTimer) window.clearTimeout(syncTimer);
+    syncTimer = window.setTimeout(function(){
+      const s = allSlides();
+      let idx = 0, minDelta = Infinity;
+      for(let i=0;i<s.length;i++){
+        const rect = s[i].getBoundingClientRect();
+        const delta = Math.abs(rect.left);
+        if(delta < minDelta){ minDelta = delta; idx = i; }
+      }
+      // Switch active state + counter to closest slide
+      if(typeof window.showSlide === 'function'){
+        // temporarily bypass showSlide's class toggles by setting currentSlide and updating UI
+        s.forEach(sl => sl.classList.remove('active'));
+        s[idx].classList.add('active');
+        currentSlide = idx;
+        if(typeof updateNavigation === 'function') updateNavigation();
+        if(typeof updateCounter === 'function') updateCounter();
+      }
+    }, 120);
+  }, {passive:true});
+
+  // Ensure first slide is in view
+  setTimeout(()=>{ scrollToCurrent(); }, 0);
+})();
+
 </script>
 </body>
 </html>
